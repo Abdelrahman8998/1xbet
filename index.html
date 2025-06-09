@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1XBET - عرض ترحيبي</title>
+  <!-- استدعاء خط Inter من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,7 +15,7 @@
 
     body {
       background: linear-gradient(135deg, #102544, #1a3055);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
       color: #ffffff;
       line-height: 1.6;
     }
@@ -58,7 +60,7 @@
     }
 
     .promo-box strong {
-      font-weight: bold;
+      font-weight: 600;
     }
 
     .promo-code {
@@ -73,7 +75,7 @@
       color: #fff;
       text-decoration: none;
       border-radius: 8px;
-      font-weight: bold;
+      font-weight: 600;
       transition: background-color 0.3s ease, transform 0.2s ease;
       cursor: pointer;
     }
@@ -83,7 +85,6 @@
       transform: translateY(-2px);
     }
 
-    /* قسم تسجيل الدخول */
     .login-section-wrapper {
       background: linear-gradient(145deg, #1c3b6a, #2d4f91);
       margin: 30px auto 50px;
@@ -99,27 +100,26 @@
       font-size: 1rem;
     }
 
-.login-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background-color: #0d9bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  border: none; /* إزالة الحدود */
-  outline: none; /* إزالة حدود التركيز */
-}
+    .login-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #0d9bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
 
     .login-btn:hover {
       background-color: #0980d3;
       transform: translateY(-2px);
     }
 
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -164,7 +164,7 @@
       padding: 10px 20px;
       border: none;
       border-radius: 6px;
-      font-weight: bold;
+      font-weight: 600;
       cursor: pointer;
     }
 
@@ -200,7 +200,6 @@
     <a href="https://1xlite-0887754.top/mobile?bf=29b63fbf6b2d4_11145200567" target="_blank">تحميل التطبيق</a>
   </div>
 
-  <!-- قسم تسجيل الدخول المستقل -->
   <div class="login-section-wrapper">
     <div class="login-section">
       <p>سجلت بالبروموكود ولم تحصل على مكافأة؟</p>
@@ -209,7 +208,6 @@
     </div>
   </div>
 
-  <!-- نافذة تسجيل الدخول -->
   <div class="modal" id="loginModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
